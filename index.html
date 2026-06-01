@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A1B2E" />
+  <title>SilverRiver Consulting — Workday HCM, sin fricción.</title>
+  <meta name="description" content="Consultora boutique especializada en Workday HCM. Diagnóstico, configuración, adopción y medición. Fundada por ex consultores de Accenture y Big4." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="has-splash">
+
+  <!-- ─────────────────────────────── SPLASH / INTRO ─────────────────────────────── -->
+  <div class="splash" id="splash" role="status" aria-label="Cargando SilverRiver Consulting">
+    <div class="splash__bg" aria-hidden="true"></div>
+    <div class="splash__glow splash__glow--a" aria-hidden="true"></div>
+    <div class="splash__glow splash__glow--b" aria-hidden="true"></div>
+    <div class="splash__inner">
+      <svg class="splash__logo" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="splashGrad" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#38BDF8"/>
+            <stop offset=".55" stop-color="#2563EB"/>
+            <stop offset="1" stop-color="#A78BFA"/>
+          </linearGradient>
+          <filter id="splashGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle class="splash__halo" cx="100" cy="100" r="88" fill="none" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
+        <path class="splash__path"
+              d="M30 130 C 70 95, 110 165, 140 115 S 175 70, 175 70"
+              stroke="url(#splashGrad)" stroke-width="6" stroke-linecap="round" fill="none"
+              filter="url(#splashGlow)"/>
+        <circle class="splash__dot splash__dot--1" cx="35"  cy="58" r="9"   fill="#38BDF8"/>
+        <circle class="splash__dot splash__dot--2" cx="90"  cy="38" r="6.5" fill="#CBD5E1"/>
+        <circle class="splash__dot splash__dot--3" cx="140" cy="58" r="6.5" fill="#CBD5E1"/>
+      </svg>
+      <h1 class="splash__name">
+        <span class="splash__name-a">SilverRiver</span>
+        <span class="splash__name-b">Consulting</span>
+      </h1>
+      <p class="splash__tag">Workday HCM, sin fricción.</p>
+      <div class="splash__bar" aria-hidden="true"><span></span></div>
+    </div>
+    <button class="splash__skip" id="splashSkip" aria-label="Saltar intro">Saltar →</button>
+  </div>
+
+  <!-- ─────────────────────────────── NAV ─────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="SilverRiver Consulting">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#38BDF8"/>
+                <stop offset="1" stop-color="#2563EB"/>
+              </linearGradient>
+            </defs>
+            <path d="M4 22 C 10 16, 14 28, 20 20 S 28 14, 28 14" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="6" cy="9" r="2" fill="#38BDF8"/>
+            <circle cx="14" cy="6" r="1.6" fill="#CBD5E1"/>
+            <circle cx="22" cy="9" r="1.6" fill="#CBD5E1"/>
+          </svg>
+        </span>
+        <span class="nav__name">SilverRiver<span class="nav__name-sub">Consulting</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#industrias">Industrias</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#caso">Caso de éxito</a>
+        <a href="#insights">Insights</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn btn--outline-glow" href="#contacto">Iniciar conversación</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="#servicios">Servicios</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#caso">Caso de éxito</a>
+      <a href="#insights">Insights</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="btn btn--primary" href="#contacto">Iniciar conversación</a>
+    </div>
+  </header>
+
+  <!-- ─────────────────────────────── HERO ─────────────────────────────── -->
+  <section class="hero" id="top">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__badge">
+        <span class="dot"></span> Workday<sup>®</sup> Services Partner · LATAM
+      </div>
+      <h1 class="hero__title">
+        Workday HCM,<br/>
+        <span class="grad">sin fricción.</span>
+      </h1>
+      <p class="hero__lead">
+        Diseñamos, configuramos y adoptamos plataformas Workday end&#8209;to&#8209;end.
+        Equipos pequeños y senior, decisiones basadas en datos, go-lives sin sorpresas.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="#contacto">
+          Agendar diagnóstico
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#caso">Ver caso AES Global</a>
+      </div>
+
+      <dl class="hero__stats" aria-label="Métricas SilverRiver">
+        <div>
+          <dt>Implementaciones Workday</dt>
+          <dd><span class="counter" data-to="42">0</span>+</dd>
+        </div>
+        <div>
+          <dt>Consultores certificados</dt>
+          <dd><span class="counter" data-to="28">0</span></dd>
+        </div>
+        <div>
+          <dt>NPS de cliente</dt>
+          <dd><span class="counter" data-to="71">0</span></dd>
+        </div>
+        <div>
+          <dt>Go-live a tiempo</dt>
+          <dd><span class="counter" data-to="97">0</span>%</dd>
+        </div>
+      </dl>
+    </div>
+
+    <a class="hero__scroll" href="#trust" aria-label="Continuar">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ─────────────────────────────── TRUST STRIP ─────────────────────────────── -->
+  <section class="trust" id="trust" aria-label="Confían en nosotros">
+    <p class="trust__label">Equipos que confían en SilverRiver</p>
+    <div class="trust__row">
+      <span class="trust__logo">AES Global</span>
+      <span class="trust__logo">Pampa Energía</span>
+      <span class="trust__logo">Tenaris</span>
+      <span class="trust__logo">YPF</span>
+      <span class="trust__logo">Naranja X</span>
+      <span class="trust__logo">Mercado Libre</span>
+      <span class="trust__logo">Globant</span>
+      <span class="trust__logo">Arcor</span>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── SERVICIOS ─────────────────────────────── -->
+  <section class="section section--dark" id="servicios">
+    <div class="section__inner">
+      <header class="section__head" data-reveal>
+        <span class="eyebrow">Servicios</span>
+        <h2 class="h2">Cuatro disciplinas, una sola entrega.</h2>
+        <p class="lead">
+          Cubrimos el ciclo completo de una transformación Workday — desde el primer
+          taller de diagnóstico hasta el tablero de KPIs operando en producción.
+        </p>
+      </header>
+
+      <div class="services">
+        <article class="service" data-reveal>
+          <div class="service__num">01</div>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3-8 4 16 3-8h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Diagnóstico &amp; rediseño de procesos</h3>
+          <p>Mapeamos el AS-IS de tu ciclo de talento, identificamos brechas y diseñamos el TO-BE alineado a Workday y a tus valores corporativos.</p>
+          <ul class="service__bullets">
+            <li>Entrevistas semi-estructuradas a stakeholders</li>
+            <li>Mapa de dolores y oportunidades cuantificado</li>
+            <li>Diseño global con variantes locales controladas</li>
+          </ul>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__num">02</div>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Configuración &amp; puesta en marcha</h3>
+          <p>Implementamos Workday Recruiting, Core HCM, Absence, Compensation y Learning con metodología Big&nbsp;Bang o por olas, según contexto.</p>
+          <ul class="service__bullets">
+            <li>Plantillas y campos obligatorios validados</li>
+            <li>Integración LinkedIn Apply + roadmap posterior</li>
+            <li>UAT robusto, plan de cutover y hypercare global</li>
+          </ul>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__num">03</div>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="11" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 2-3.5 4-3.5s4 1.5 4 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Gestión del cambio &amp; adopción</h3>
+          <p>Red de champions regionales, capacitación por rol y comunicación estructurada. Sin adopción no hay valor: lo tratamos como deliverable, no como anexo.</p>
+          <ul class="service__bullets">
+            <li>Champions network global-regional</li>
+            <li>Capacitación específica Hiring Manager / HRBP / HRVP</li>
+            <li>Comunicación pre, durante y post go-live</li>
+          </ul>
+        </article>
+
+        <article class="service" data-reveal>
+          <div class="service__num">04</div>
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 15v-3M12 15V8M17 15v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>KPIs &amp; analytics post go-live</h3>
+          <p>Tableros sobre funnel, drop-off por etapa, NPS de candidato, offer acceptance y SLAs internos. Hacemos visible el retorno de la inversión.</p>
+          <ul class="service__bullets">
+            <li>Candidate drop-off rate por etapa</li>
+            <li>Hiring manager satisfaction &amp; NPS</li>
+            <li>SLAs de aprobaciones HRBP / HRVP</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── INDUSTRIAS ─────────────────────────────── -->
+  <section class="section" id="industrias">
+    <div class="section__inner">
+      <header class="section__head" data-reveal>
+        <span class="eyebrow">Industrias</span>
+        <h2 class="h2">Workday hablado en tu idioma operativo.</h2>
+        <p class="lead">
+          Aplicamos el estándar global de Workday respetando la realidad de cada sector: regulaciones,
+          turnos, sindicatos, ciclos de proyecto y cultura.
+        </p>
+      </header>
+
+      <div class="industries">
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">⚡</span>
+          <h3>Energía &amp; Utilities</h3>
+          <p>Operaciones multi-país, Safety First, dotación técnica crítica.</p>
+        </button>
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">🏦</span>
+          <h3>Banca &amp; Servicios financieros</h3>
+          <p>Compliance, background checks regulatorios y velocidad de hire.</p>
+        </button>
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">🛒</span>
+          <h3>Retail &amp; Consumo masivo</h3>
+          <p>Alta rotación, picos estacionales, contratación distribuida.</p>
+        </button>
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">💻</span>
+          <h3>Tecnología &amp; Software</h3>
+          <p>Talento global escaso, competencia por skills, employer branding.</p>
+        </button>
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">🏥</span>
+          <h3>Salud &amp; Life sciences</h3>
+          <p>Credenciales, certificaciones obligatorias, trazabilidad.</p>
+        </button>
+        <button class="industry" data-reveal>
+          <span class="industry__ico" aria-hidden="true">🏭</span>
+          <h3>Industria &amp; Manufactura</h3>
+          <p>Convenios, planta + corporativo, perfiles especializados.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── METODOLOGÍA ─────────────────────────────── -->
+  <section class="section section--dark" id="metodologia">
+    <div class="section__inner">
+      <header class="section__head" data-reveal>
+        <span class="eyebrow">Metodología SR</span>
+        <h2 class="h2">Cuatro fases. Cero sorpresas.</h2>
+        <p class="lead">
+          Un proceso probado en deployments multi-región, con entregables, gates de calidad
+          y owners claros en cada fase.
+        </p>
+      </header>
+
+      <ol class="timeline">
+        <li class="timeline__item" data-reveal>
+          <div class="timeline__dot">1</div>
+          <div class="timeline__body">
+            <h3>Discover</h3>
+            <span class="timeline__weeks">Semanas 1–3</span>
+            <p>Relevamos AS-IS, stakeholders, integraciones vigentes y dolores. Salida: business case y matriz de factores internos con ponderación.</p>
+          </div>
+        </li>
+        <li class="timeline__item" data-reveal>
+          <div class="timeline__dot">2</div>
+          <div class="timeline__body">
+            <h3>Design</h3>
+            <span class="timeline__weeks">Semanas 4–8</span>
+            <p>Diseño del TO-BE end-to-end, modelo de seguridad, etapas globales, plantillas y variantes locales controladas.</p>
+          </div>
+        </li>
+        <li class="timeline__item" data-reveal>
+          <div class="timeline__dot">3</div>
+          <div class="timeline__body">
+            <h3>Deploy</h3>
+            <span class="timeline__weeks">Semanas 9–22</span>
+            <p>Configuración, integración LinkedIn Apply, UAT robusto, plan de cutover y go-live Big Bang global o por olas.</p>
+          </div>
+        </li>
+        <li class="timeline__item" data-reveal>
+          <div class="timeline__dot">4</div>
+          <div class="timeline__body">
+            <h3>Drive</h3>
+            <span class="timeline__weeks">Semanas 23+</span>
+            <p>Hypercare global, sunset de herramientas legacy (ej. SuccessFactors), tableros de KPIs y mejora continua.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── CASE STUDY ─────────────────────────────── -->
+  <section class="section" id="caso">
+    <div class="section__inner">
+      <header class="section__head" data-reveal>
+        <span class="eyebrow">Caso de éxito</span>
+        <h2 class="h2">AES Global — Workday Recruiting como plataforma única.</h2>
+        <p class="lead">
+          Multinacional energética con operación en múltiples regiones. Pasamos de un esquema
+          híbrido (SuccessFactors + emails + Workday parcial) a un proceso end-to-end unificado.
+        </p>
+      </header>
+
+      <div class="case">
+        <div class="case__panel case__panel--dark" data-reveal>
+          <span class="tag tag--down">AS-IS</span>
+          <h3>El punto de partida</h3>
+          <ul>
+            <li>Publicaciones en LinkedIn + uso parcial de SuccessFactors.</li>
+            <li>Coordinación con alto volumen de emails entre regiones.</li>
+            <li>Carga puntual en Workday sin flujo end-to-end unificado.</li>
+            <li>Candidate experience inconsistente y baja trazabilidad.</li>
+          </ul>
+        </div>
+        <div class="case__panel case__panel--glow" data-reveal>
+          <span class="tag tag--up">TO-BE</span>
+          <h3>La solución SilverRiver</h3>
+          <ul>
+            <li>Workday Recruiting como única plataforma global.</li>
+            <li>Proceso estándar de 7 etapas con aprobaciones HRBP / HRVP.</li>
+            <li>Go-live Big Bang con hypercare global y champions regionales.</li>
+            <li>Sunset de SuccessFactors para una sola "source of truth".</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case__stages" data-reveal>
+        <div class="stage"><span>01</span> Requisition</div>
+        <div class="stage"><span>02</span> Screening</div>
+        <div class="stage"><span>03</span> Assessment</div>
+        <div class="stage"><span>04</span> Interview</div>
+        <div class="stage"><span>05</span> Offer</div>
+        <div class="stage"><span>06</span> Background</div>
+        <div class="stage stage--end"><span>07</span> Hired</div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi" data-reveal>
+          <div class="kpi__num"><span class="counter" data-to="100">0</span>%</div>
+          <div class="kpi__lbl">Procesos gestionados en Workday</div>
+        </div>
+        <div class="kpi" data-reveal>
+          <div class="kpi__num">−<span class="counter" data-to="38">0</span>%</div>
+          <div class="kpi__lbl">Drop-off de candidato por etapa</div>
+        </div>
+        <div class="kpi" data-reveal>
+          <div class="kpi__num">+<span class="counter" data-to="22">0</span>pp</div>
+          <div class="kpi__lbl">Offer acceptance rate</div>
+        </div>
+        <div class="kpi" data-reveal>
+          <div class="kpi__num"><span class="counter" data-to="3">0</span>.<span class="counter" data-to="2">0</span>x</div>
+          <div class="kpi__lbl">Velocidad de aprobaciones HRBP/HRVP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── INSIGHTS ─────────────────────────────── -->
+  <section class="section section--silver" id="insights">
+    <div class="section__inner">
+      <header class="section__head" data-reveal>
+        <span class="eyebrow">Insights</span>
+        <h2 class="h2">Lectura para líderes de RRHH y tecnología.</h2>
+        <p class="lead">Análisis, frameworks y benchmarks de nuestros consultores senior.</p>
+      </header>
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card__img card__img--a" aria-hidden="true"></div>
+          <span class="card__tag">Recruiting</span>
+          <h3>5 errores al planificar un go-live Big Bang global</h3>
+          <p>Por qué el cutover suele fallar en regiones secundarias y cómo blindar el hypercare.</p>
+          <a href="#" class="card__link">Leer artículo →</a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__img card__img--b" aria-hidden="true"></div>
+          <span class="card__tag">Adopción</span>
+          <h3>El verdadero costo de no medir candidate experience</h3>
+          <p>Marco de NPS aplicado al funnel de Workday Recruiting con benchmarks LATAM.</p>
+          <a href="#" class="card__link">Leer artículo →</a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__img card__img--c" aria-hidden="true"></div>
+          <span class="card__tag">KPIs</span>
+          <h3>De qué hablamos cuando hablamos de "trazabilidad end-to-end"</h3>
+          <p>Una métrica simple para alinear TA, HRBP y Shared Services en un solo tablero.</p>
+          <a href="#" class="card__link">Leer artículo →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── NOSOTROS ─────────────────────────────── -->
+  <section class="section section--dark" id="nosotros">
+    <div class="section__inner about">
+      <div class="about__copy" data-reveal>
+        <span class="eyebrow">Nosotros</span>
+        <h2 class="h2">Una boutique fundada por consultores de Accenture y las Big&nbsp;4.</h2>
+        <p class="lead">
+          Trabajamos con equipos pequeños, senior y dedicados — no con pirámides de juniors.
+          Cada proyecto tiene un partner involucrado y un consultor líder con experiencia previa
+          en deployments globales de Workday.
+        </p>
+        <div class="about__values">
+          <div>
+            <h4>Safety First</h4>
+            <p>Procesos robustos, evidencias y controles.</p>
+          </div>
+          <div>
+            <h4>All Together</h4>
+            <p>Colaboración global-regional, una sola versión de la verdad.</p>
+          </div>
+          <div>
+            <h4>Building the Future</h4>
+            <p>Transformación, digitalización y decisiones con datos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about__panel" data-reveal>
+        <div class="about__panel-inner">
+          <div class="about__row">
+            <span>Fundación</span><strong>2021 · Buenos Aires</strong>
+          </div>
+          <div class="about__row">
+            <span>Cobertura</span><strong>LATAM + EMEA (remoto)</strong>
+          </div>
+          <div class="about__row">
+            <span>Workday Suites</span><strong>HCM · Recruiting · Absence · Comp · Learning</strong>
+          </div>
+          <div class="about__row">
+            <span>Modelo</span><strong>Senior-only, equipos &lt; 6 personas</strong>
+          </div>
+          <div class="about__row">
+            <span>Idiomas</span><strong>ES · EN · PT</strong>
+          </div>
+          <div class="about__row about__row--cta">
+            <a class="btn btn--primary btn--full" href="#contacto">Conocer al equipo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── CTA / CONTACTO ─────────────────────────────── -->
+  <section class="cta" id="contacto">
+    <div class="cta__inner">
+      <div class="cta__copy" data-reveal>
+        <span class="eyebrow eyebrow--light">Próximo paso</span>
+        <h2 class="h2 h2--light">Hablemos de tu próximo go-live.</h2>
+        <p class="lead lead--light">
+          Una sesión de 30 minutos con un consultor senior para mapear tu escenario actual
+          y definir si SilverRiver puede aportar valor. Sin compromiso.
+        </p>
+        <ul class="cta__list">
+          <li>✓ Diagnóstico inicial sin costo</li>
+          <li>✓ Workshop de 1 día opcional (alcance fijo)</li>
+          <li>✓ Propuesta económica en 5 días hábiles</li>
+        </ul>
+      </div>
+      <form class="cta__form" data-reveal onsubmit="event.preventDefault(); document.getElementById('formMsg').classList.add('on');">
+        <label>
+          <span>Nombre</span>
+          <input type="text" required placeholder="María García" />
+        </label>
+        <label>
+          <span>Email corporativo</span>
+          <input type="email" required placeholder="maria@empresa.com" />
+        </label>
+        <label>
+          <span>Empresa</span>
+          <input type="text" required placeholder="Empresa S.A." />
+        </label>
+        <label>
+          <span>¿En qué podemos ayudarte?</span>
+          <select>
+            <option>Diagnóstico Workday HCM</option>
+            <option>Implementación Workday Recruiting</option>
+            <option>Adopción y change management</option>
+            <option>Tableros y KPIs post go-live</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn--primary btn--full">
+          Solicitar conversación
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="cta__msg" id="formMsg">Gracias. Un consultor senior te contactará en menos de 48&nbsp;h.</p>
+        <p class="cta__small">Tus datos no se comparten con terceros. Cumplimos con Ley 25.326 (AR) y GDPR (EU).</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── FOOTER ─────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a class="nav__brand" href="#top">
+          <span class="nav__logo" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <defs>
+                <linearGradient id="lg2" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#38BDF8"/>
+                  <stop offset="1" stop-color="#2563EB"/>
+                </linearGradient>
+              </defs>
+              <path d="M4 22 C 10 16, 14 28, 20 20 S 28 14, 28 14" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="6" cy="9" r="2" fill="#38BDF8"/>
+              <circle cx="14" cy="6" r="1.6" fill="#CBD5E1"/>
+              <circle cx="22" cy="9" r="1.6" fill="#CBD5E1"/>
+            </svg>
+          </span>
+          <span class="nav__name">SilverRiver<span class="nav__name-sub">Consulting</span></span>
+        </a>
+        <p>Workday HCM, sin fricción. Boutique senior con foco en deployments globales.</p>
+        <div class="footer__lang">
+          <button class="lang on">ES</button>
+          <button class="lang">EN</button>
+          <button class="lang">PT</button>
+        </div>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Servicios</h4>
+          <a href="#servicios">Diagnóstico &amp; rediseño</a>
+          <a href="#servicios">Configuración Workday</a>
+          <a href="#servicios">Adopción &amp; change</a>
+          <a href="#servicios">KPIs &amp; analytics</a>
+        </div>
+        <div>
+          <h4>Industrias</h4>
+          <a href="#industrias">Energía</a>
+          <a href="#industrias">Banca</a>
+          <a href="#industrias">Retail</a>
+          <a href="#industrias">Tecnología</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="#nosotros">Quiénes somos</a>
+          <a href="#caso">Casos de éxito</a>
+          <a href="#insights">Insights</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <a href="mailto:hola@silverriver.consulting">hola@silverriver.consulting</a>
+          <a href="tel:+541140000000">+54 11 4000-0000</a>
+          <span>Av. del Libertador 1000<br/>Buenos Aires, Argentina</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <small>© 2026 SilverRiver Consulting · Trabajo académico ficticio</small>
+      <div class="footer__legal">
+        <a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Cookies</a>
+      </div>
+      <div class="footer__social" aria-label="Redes">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─────────────────────────────── WHATSAPP FAB ─────────────────────────────── -->
+  <a class="wa-fab" href="https://wa.me/5491126762031?text=Hola%20SilverRiver%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20su%20servicio%20de%20Workday%20HCM."
+     target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <span class="wa-fab__ring" aria-hidden="true"></span>
+    <span class="wa-fab__icon" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+        <path d="M16.001 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.59 4.46 1.71 6.4L3.2 28.8l6.55-1.71c1.88 1.03 4 1.57 6.25 1.57h.005c7.06 0 12.8-5.74 12.8-12.8s-5.745-12.66-12.804-12.66Zm0 23.36h-.004a10.57 10.57 0 0 1-5.39-1.48l-.39-.23-3.89 1.02 1.04-3.79-.25-.39A10.6 10.6 0 0 1 5.44 16c0-5.84 4.75-10.6 10.6-10.6 2.83 0 5.49 1.1 7.49 3.1a10.53 10.53 0 0 1 3.1 7.5c0 5.84-4.75 10.56-10.62 10.56Zm5.82-7.92c-.32-.16-1.88-.93-2.18-1.03-.29-.11-.5-.16-.71.16s-.81 1.03-.99 1.23c-.18.22-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.6 9.6 0 0 1-1.77-2.2c-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55s.21-.32.32-.53c.11-.22.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54l-.61-.01a1.17 1.17 0 0 0-.85.4 3.59 3.59 0 0 0-1.12 2.67c0 1.57 1.14 3.09 1.3 3.31.16.22 2.25 3.44 5.45 4.83.76.33 1.36.53 1.82.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.15-1.51.27-.74.27-1.37.19-1.51-.08-.13-.29-.21-.61-.37Z"/>
+      </svg>
+    </span>
+    <span class="wa-fab__label">Chateá por WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
